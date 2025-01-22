@@ -16,7 +16,7 @@ public final class Lab1 {
         throw new IllegalStateException("Utility class");
     }
 
-    // another comment
+    // another - and something here inthe middle as well - comment, plus some shoit added
     // some comment
 
     /**
