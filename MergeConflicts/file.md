@@ -1,6 +1,6 @@
 one
 PENIS
 three
-strippers
+strippers updated in merging branch
 beers
 ham
