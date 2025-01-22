@@ -1,6 +1,6 @@
 one
 PENIS
 three
-four
-dices
-bears
+strippers
+beers
+ham
