@@ -17,6 +17,7 @@ public final class Lab1 {
     }
 
     // another comment
+    // some comment
 
     /**
      * The main method is the entry point for the application.
