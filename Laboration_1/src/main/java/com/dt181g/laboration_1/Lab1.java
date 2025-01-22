@@ -16,6 +16,8 @@ public final class Lab1 {
         throw new IllegalStateException("Utility class");
     }
 
+    // another comment
+
     /**
      * The main method is the entry point for the application.
      *
