@@ -1,5 +1,6 @@
 one
 PENIS
 three
-eggs
+strippers
+beers
 ham
