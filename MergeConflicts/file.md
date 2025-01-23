@@ -5,7 +5,7 @@ strippers updated in merging branch
 beers
 ham
 
-hello mundo
+hello mundo updated for -Xtheirs
 
 some scrips could possibly be added
 
