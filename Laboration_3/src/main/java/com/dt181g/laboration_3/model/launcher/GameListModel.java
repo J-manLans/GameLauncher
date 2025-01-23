@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.dt181g.laboration_3.controller.games.common.IGameController;
 import com.dt181g.laboration_3.model.games.common.IGameModel;
+import com.dt181g.laboration_3.supportChange.AppConfigLab3;
 import com.dt181g.laboration_3.view.games.common.IGameView;
-import com.dt181g.laboration_3.support.AppConfigLab3;
 
 /**
  * The GameListModel class maintains a list of game models, their corresponding views and controllers.

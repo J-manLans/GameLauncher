@@ -1,9 +1,9 @@
 package com.dt181g.laboration_3.view.launcher;
 
+import com.dt181g.laboration_3.supportChange.AppConfigLab3;
 import com.dt181g.laboration_3.view.common.IView;
 import com.dt181g.laboration_3.view.common.ImageManager;
 import com.dt181g.laboration_3.view.games.common.IGameView;
-import com.dt181g.laboration_3.support.AppConfigLab3;
 
 import java.awt.Component;
 import java.awt.Cursor;

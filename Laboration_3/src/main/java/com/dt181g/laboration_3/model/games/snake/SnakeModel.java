@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dt181g.laboration_3.model.games.common.IGameModel;
-import com.dt181g.laboration_3.support.AppConfigLab3;
+import com.dt181g.laboration_3.supportChange.AppConfigLab3;
 
 /**
  * The SnakeModel class represents the model for the Snake game.

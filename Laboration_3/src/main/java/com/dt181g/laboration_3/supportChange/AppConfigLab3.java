@@ -1,4 +1,4 @@
-package com.dt181g.laboration_3.support;
+package com.dt181g.laboration_3.supportChange;
 
 import java.awt.Dimension;
 import java.awt.Insets;

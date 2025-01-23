@@ -1,13 +1,13 @@
 package com.dt181g.laboration_3.controller.common;
 
-import com.dt181g.laboration_3.support.AppConfigLab3;
-
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
+
+import com.dt181g.laboration_3.supportChange.AppConfigLab3;
 
 /**
  * Listener for menu buttons that provides visual feedback and triggers actions on mouse events.

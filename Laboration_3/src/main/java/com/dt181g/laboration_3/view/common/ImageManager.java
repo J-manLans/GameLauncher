@@ -8,8 +8,8 @@ import java.awt.Image;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-import com.dt181g.laboration_3.support.AppConfigLab3;
-import com.dt181g.laboration_3.support.DebugLogger;
+import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.supportChange.DebugLogger;
 
 /**
  * A singleton that holds methods for managing various images across the
