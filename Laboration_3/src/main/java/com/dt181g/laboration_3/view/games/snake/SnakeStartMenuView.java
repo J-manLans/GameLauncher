@@ -7,7 +7,7 @@ import java.awt.event.MouseAdapter;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.support.AppConfigLab3;
 
 /**
  * Represents the start menu view for the Snake game.

@@ -10,7 +10,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.support.AppConfigLab3;
 
 /**
  * Represents the single-player view for the Snake game.

@@ -1,4 +1,4 @@
-package com.dt181g.laboration_3.supportChange;
+package com.dt181g.laboration_3.support;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;

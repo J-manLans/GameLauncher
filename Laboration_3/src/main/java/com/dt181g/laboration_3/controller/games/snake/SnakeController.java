@@ -6,7 +6,7 @@ import com.dt181g.laboration_3.controller.games.common.IGameController;
 import com.dt181g.laboration_3.model.games.common.IGameModel;
 import com.dt181g.laboration_3.view.games.common.IGameView;
 import com.dt181g.laboration_3.model.games.snake.SnakeModel;
-import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.support.AppConfigLab3;
 import com.dt181g.laboration_3.view.games.snake.SnakeMainView;
 
 import java.awt.event.ActionEvent;

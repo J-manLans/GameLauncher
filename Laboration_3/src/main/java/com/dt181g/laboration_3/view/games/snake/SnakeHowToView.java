@@ -6,7 +6,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.support.AppConfigLab3;
 
 /**
  * Represents the controls menu view for the Snake game.

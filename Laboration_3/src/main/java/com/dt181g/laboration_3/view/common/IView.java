@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.support.AppConfigLab3;
 
 import java.awt.Font;
 import java.awt.GridBagConstraints;

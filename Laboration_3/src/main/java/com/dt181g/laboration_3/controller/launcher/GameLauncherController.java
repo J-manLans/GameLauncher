@@ -9,7 +9,7 @@ import com.dt181g.laboration_3.controller.games.snake.SnakeController;
 import com.dt181g.laboration_3.model.games.snake.SnakeModel;
 import com.dt181g.laboration_3.view.games.snake.SnakeMainView;
 import com.dt181g.laboration_3.model.launcher.GameListModel;
-import com.dt181g.laboration_3.supportChange.AppConfigLab3;
+import com.dt181g.laboration_3.support.AppConfigLab3;
 import com.dt181g.laboration_3.view.launcher.GameLauncherView;
 import com.dt181g.laboration_3.controller.common.MenuButtonListener;
 
