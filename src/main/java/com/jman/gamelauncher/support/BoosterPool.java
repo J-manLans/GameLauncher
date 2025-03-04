@@ -65,7 +65,6 @@ public enum BoosterPool {
             this.boosters.add(booster);
         }
 
-        System.out.println(boosterPool.size());
         scheduleBoosterActivationWithRandomDelay();
     }
 
@@ -96,9 +95,6 @@ public enum BoosterPool {
             }
 
             if (isPaused) { return; } // If we are in pause mode, do nothing.
-            // Sleep outside the synchronized block to avoid hogging it and to achieve a delay before activation.
-            try { Thread.sleep(randomizer.nextInt(AppConfig.BOOSTER_SPAWN_MIN_DELAY, AppConfig.BOOSTER_SPAWN_MAX_DELAY)); }
-            catch (final InterruptedException e) { Thread.currentThread().interrupt(); }
         }
 
 

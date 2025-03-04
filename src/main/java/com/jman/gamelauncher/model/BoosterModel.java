@@ -71,15 +71,17 @@ public abstract class BoosterModel extends Thread {
     * Abstract methods
     ==============================*/
 
-    /**
-     * Defines the effect applied when the booster is consumed.
-     */
-    abstract void applyEffect();
+    abstract void spawnCoolDown();
 
     /**
      * Preloads any necessary sound effects for the booster.
      */
     abstract void loadSoundEffect();
+
+    /**
+     * Defines the effect applied when the booster is consumed.
+     */
+    abstract void applyEffect();
 
     /**
      * Plays the booster-specific sound effect when consumed.
@@ -103,7 +105,6 @@ public abstract class BoosterModel extends Thread {
      */
     synchronized public void activate(final Point newPosition) {
         position.setLocation(newPosition);
-        isActive = true;
         notify(); // Wake up the thread to let it advance to the active wait state
     }
 
@@ -115,7 +116,6 @@ public abstract class BoosterModel extends Thread {
      */
     synchronized public void consume(final boolean isPause) {
         this.isPause = isPause;
-        isActive = false;
         notify(); // Wake up the thread to let it do it's task
     }
 
@@ -146,6 +146,12 @@ public abstract class BoosterModel extends Thread {
                 while (!isActive && running) {
                     try {
                         wait(); // Wait until activated or shutdown
+                        if (running) {
+                            System.out.println("cool down");
+                            spawnCoolDown();
+                            System.out.println("active");
+                        }
+                        isActive = true;
                     } catch (final InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }
@@ -155,6 +161,7 @@ public abstract class BoosterModel extends Thread {
                     while (isActive && running) {
                         try {
                             wait(); // Wait until consumed
+                            isActive = false;
                         } catch (final InterruptedException e) {
                             Thread.currentThread().interrupt();
                         }

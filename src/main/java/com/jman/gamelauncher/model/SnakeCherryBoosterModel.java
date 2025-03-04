@@ -2,7 +2,9 @@ package com.jman.gamelauncher.model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.util.Random;
 
+import com.jman.gamelauncher.support.AppConfig;
 import com.jman.gamelauncher.support.AppConfigSnake;
 import com.jman.gamelauncher.support.AudioManager;
 
@@ -23,6 +25,7 @@ public final class SnakeCherryBoosterModel extends BoosterModel {
     private final ISnakeBoosterTarget snakeTarget;
     private final Color color = AppConfigSnake.COLOR_CHERRY_BOOSTER;
     private final String soundEffect = AppConfigSnake.SOUND_EFFECT_CHERRY;
+    private Random randomizer = new Random();
 
     /**
      * Creates a new CherryBooster instance and preload its sound effect.
@@ -43,6 +46,16 @@ public final class SnakeCherryBoosterModel extends BoosterModel {
     public void activate(final Point newPosition) {
         if (snakeTarget.getSnake().contains(newPosition)) { return; }
         super.activate(newPosition);
+    }
+
+    @Override
+    void spawnCoolDown() {
+        try {
+            Thread.sleep(randomizer.nextLong(AppConfig.BOOSTER_SPAWN_MIN_DELAY, AppConfig.BOOSTER_SPAWN_MAX_DELAY));
+        } catch (final InterruptedException e) {
+            System.out.println("interrupted");
+            Thread.currentThread().interrupt();
+        }
     }
 
     /**
