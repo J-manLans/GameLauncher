@@ -164,11 +164,11 @@ public class SnakeSinglePlayerView extends JPanel implements IBaseView {
      * @param snakeSpeed The speed of the snake at the time of game over.
      */
     public void showGameOver(int snakeLength, int snakeSpeed) {
-            if (!this.layeredPane.isAncestorOf(gameOverPanel)) {
-                this.layeredPane.add(this.gameOverPanel, JLayeredPane.POPUP_LAYER);
-            }
-            this.snakeLengthLabel.setText("Your snake was " + snakeLength + " body parts long.");
-            this.snakeSpeedLabel.setText("It traveled with a speed of " + snakeSpeed + " cells per second.");
+        if (!this.layeredPane.isAncestorOf(gameOverPanel)) {
+            this.layeredPane.add(this.gameOverPanel, JLayeredPane.POPUP_LAYER);
+        }
+        this.snakeLengthLabel.setText("Your snake was " + snakeLength + " body parts long.");
+        this.snakeSpeedLabel.setText("It traveled with a speed of " + snakeSpeed + " cells per second.");
         this.gameOverPanel.setVisible(true);
     }
 
