@@ -2,183 +2,100 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <!-- Basic project information -->
-    <groupId>com.dt181g</groupId>
-    <artifactId>assignments</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>Assignments</name>
-    <url>${project.artifactId}</url>
-    <description>
-        Main project for the three lab assignments, and final project, in course DT181G.
-    </description>
-    <!-- Modules for the project -->
-    <modules>
-        <module>Project</module>
-    </modules>
-    <!-- Project properties -->
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
-    <!-- Distribution management for site deployment -->
-    <distributionManagement>
-        <site>
-            <id>${project.artifactId}-site</id>
-            <url>file://${project.artifactId}/target/site/</url>
-        </site>
-    </distributionManagement>
-    <!-- Reporting plugins for generating documentation and reports -->
-    <reporting>
-        <plugins>
-            <!-- Site generation plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>4.0.0-M5</version>
-            </plugin>
-            <!-- Project information reports plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.4.1</version>
-            </plugin>
-            <!-- JavaDoc generation plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.4.0</version>
-                <configuration>
-                    <show>protected</show>
-                    <quiet>true</quiet>
-                    <links>
-                        <link>https://docs.oracle.com/en/java/javase/17/docs/api/</link>
-                    </links>
-                </configuration>
-                <reportSets>
-                    <reportSet>
-                        <id>default</id>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <!-- Surefire report generation plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <title>Surefire Report</title>
-                    <description>Overview of test outcomes.</description>
-                    <outputDirectory>${project.reporting.outputDirectory}/surefire-report</outputDirectory>
-                    <showSuccess>true</showSuccess>
-                    <linkXRef>true</linkXRef>
-                    <aggregate>true</aggregate>
-                </configuration>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <!-- Checkstyle plugin for checking code style -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.1</version>
-                <configuration>
-                    <configLocation>_RepoResources/checkstyle.xml</configLocation>
-                    <consoleOutput>false</consoleOutput>
-                    <linkXRef>false</linkXRef>
-                    <goal>site</goal>
-                </configuration>
-                <reportSets>
-                    <reportSet>
-                        <inherited>true</inherited>
-                        <reports>
-                            <report>checkstyle</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
-    <!-- Build configuration -->
-    <build>
-        <plugins>
-            <!-- Surefire plugin for running tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>default-test1</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-test2</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-test3</id>
-                        <phase>site</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Site generation plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>4.0.0-M5</version>
-            </plugin>
-            <!-- Compiler plugin for compiling the project -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
-                <configuration>
-                    <release>17</release>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <!-- Project dependencies -->
-    <dependencies>
-        <!-- JUnit Jupiter API dependency for tests -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- JUnit Jupiter Engine dependency for running tests -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0</version>
-            <type>maven-plugin</type>
-        </dependency>
-    </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Basic project information -->
+  <groupId>com.jman</groupId>
+  <artifactId>game-launcher</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>GameLauncher</name>
+  <description>
+    A GameLauncher used to implement various simple games and render them using Java's Swing library.
+  </description>
+
+  <!-- Project properties -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+
+  <!-- Build configuration -->
+  <build>
+    <plugins>
+      <!-- Surefire plugin for running tests -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.2</version>
+        <configuration>
+          <reportsDirectory>${project.build.directory}/custom-reports</reportsDirectory>
+        </configuration>
+        <!-- Default configuration runs tests during the test phase -->
+      </plugin>
+      <!-- Compiler plugin for compiling the project -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.0</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+      <!-- Shade plugin to build a fat (shaded) JAR including dependencies -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <!-- Create a dependency-reduced POM file -->
+              <createDependencyReducedPom>true</createDependencyReducedPom>
+              <transformers>
+                <!-- Specify the main class in the JAR manifest -->
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>com.jman.gamelauncher.GameLauncher</mainClass>
+                </transformer>
+              </transformers>
+              <!-- Exclude unnecessary files from the shaded JAR -->
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Project dependencies -->
+  <dependencies>
+    <!-- JUnit Jupiter API for tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.12.0</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- JUnit Jupiter Engine for running tests -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.12.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 </project>
