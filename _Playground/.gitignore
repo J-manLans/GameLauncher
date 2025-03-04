@@ -1,9 +1,0 @@
-# ignore everything except for stated files and directories in folder
-/*
-!/README.md
-!.gitignore
-!README.md
-!pom.xml
-!src/main/java/com/dt181g/playground/Playground.java
-!src/test/java/com/dt180g/playground/PlaygroundTest.java
-!src/main/java/package-info.java

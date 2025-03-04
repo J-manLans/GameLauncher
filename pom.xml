@@ -15,10 +15,6 @@
     </description>
     <!-- Modules for the project -->
     <modules>
-        <module>Laboration_1</module>
-        <module>Laboration_2</module>
-        <module>Laboration_3</module>
-        <module>_Playground</module>
         <module>Project</module>
     </modules>
     <!-- Project properties -->
