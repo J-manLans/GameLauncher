@@ -15,7 +15,6 @@ import java.util.logging.SimpleFormatter;
  * allowing different parts of the application to log messages with various severity levels.
  * It formats log messages with specific colors for better visibility in the console.
  * </p>
- *
  * @author Joel Lansgren
  */
 public enum DebugLogger {
@@ -68,36 +67,23 @@ public enum DebugLogger {
     // ===== Statistical logs =====
 
     /**
-     * Logs information with a yellow color formatting, including the class
-     * and method names of the caller.
+     * Logs information with a yellow color formatting.
      *
      * @param message the message to be logged
      */
     public void logInfo(final String message) {
-        performLog(String.format("%s%s In: %s.%s()%s",
-            AppConfigProject.ANSI_YELLOW,
-            message,
-            getCallerName(StackWalker.StackFrame::getClassName),
-            getCallerName(StackWalker.StackFrame::getMethodName),
-            AppConfigProject.ANSI_RESET)
-        );
+        performLog(String.format("%s%s%s", AppConfigDebug.ANSI_YELLOW, message, AppConfigDebug.ANSI_RESET));
+
     }
 
 
     /**
-     * Logs warning information with a red color formatting, including the class
-     * and method names of the caller.
+     * Logs warning information with a red color formatting.
      *
      * @param message the message to be logged
      */
     public void logWarning(final String message) {
-        performLog(String.format("%s%s In: %s.%s()%s",
-            AppConfigProject.ANSI_RED,
-            message,
-            getCallerName(StackWalker.StackFrame::getClassName),
-            getCallerName(StackWalker.StackFrame::getMethodName),
-            AppConfigProject.ANSI_RESET)
-        );
+        performLog(String.format("%s%s%s", AppConfigDebug.ANSI_RED, message, AppConfigDebug.ANSI_RESET));
     }
 
     /**
@@ -108,11 +94,11 @@ public enum DebugLogger {
      */
     public void logException(Exception e) {
         performLog(String.format("%s%s exception in %s.%s()%s",
-            AppConfigProject.ANSI_RED,
+        AppConfigDebug.ANSI_RED,
             e.toString(),
             getCallerName(StackWalker.StackFrame::getClassName),
             getCallerName(StackWalker.StackFrame::getMethodName),
-            AppConfigProject.ANSI_RESET)
+            AppConfigDebug.ANSI_RESET)
         );
     }
 

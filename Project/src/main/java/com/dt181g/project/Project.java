@@ -1,6 +1,6 @@
 package com.dt181g.project;
 
-import com.dt181g.project.issuer.GameLauncherInitializer;
+import com.dt181g.project.initialization.GameLauncherInitializer;
 
 /**
  * The main starting point for the project.
@@ -13,9 +13,9 @@ public final class Project {
 
     /**
      * The main method serves as the entry point for the application.
-     * It invokes the singleton instance of the game launcher issuer,
-     * which encapsulates the logic required to start the game launcher.
      *
+     * <p>It invokes the singleton instance of the game launcher issuer,
+     * which encapsulates the logic required to start the game launcher.</p>
      * @param args command-line arguments (not used).
      */
     public static void main(final String... args) {
