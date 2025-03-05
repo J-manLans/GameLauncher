@@ -29,7 +29,7 @@ public class LauncherModel {
      */
     public LauncherModel() {
         for (final String game : AppConfigLauncher.GAMES) {
-           games.put(game, new GameData());
+           games.put(game, new GameData(game));
         }
     }
 
@@ -45,18 +45,5 @@ public class LauncherModel {
         return games.keySet().stream()
             .sorted()
             .collect(Collectors.toList());
-    }
-
-    /*================
-    * Setters
-    ================*/
-
-    /**
-     * Sets the active status of a game and triggers the associated display action if the game is set to active.
-     * @param game the title of the game whose status is being set
-     * @param isActive the active status to set for the game
-     */
-    public void setActiveGameState(final String game, final boolean isActive) {
-       games.get(game).setActiveState(isActive);
     }
 }

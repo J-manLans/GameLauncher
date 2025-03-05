@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 
 import javax.swing.SwingUtilities;
 
-import com.jman.gamelauncher.initialization.GameLauncherInitializer;
 import com.jman.gamelauncher.model.LauncherModel;
 import com.jman.gamelauncher.support.AppConfig;
 import com.jman.gamelauncher.support.AppConfigLauncher;
@@ -102,8 +101,6 @@ public class LauncherController {
 
     /** Initializes the views listeners. */
     private void initializeListeners() {
-        sideView.addScrollSpeedListener(this::handleScrollSpeed);
-
         sideView.addExitBtnListener(this::exitLauncher);
 
         startView.addAboutBtnListener(() -> {
@@ -116,26 +113,11 @@ public class LauncherController {
     }
 
     /**
-     * Adjusts the scroll position based on wheel rotation, scaled by the speed multiplier.
-     *
-     * @param wheelRotation either up (-1) or down (1) based on scroll direction
-     */
-    private void handleScrollSpeed(final int wheelRotation) {
-        sideView.setScrollPosition(
-            sideView.getScrollPosition() + (wheelRotation * AppConfigLauncher.SCROLL_SPEED_MULTIPLIER)
-        );
-    }
-
-    /**
      * Exits the game launcher application.
-     *
-     * <p>This method terminates the application by calling the
-     * {@link GameLauncherInitializer#INSTANCE.countDown()} method of the
-     * GameLauncherInitializer singleton which in turn count down its latch
-     * which releases the main thread to call System.exit(0).</p>
+     * This method terminates the application by calling System.exit(0).
      */
     private void exitLauncher() {
-        GameLauncherInitializer.INSTANCE.countDown();
+        System.exit(0);
     }
 
     /*=========================================================

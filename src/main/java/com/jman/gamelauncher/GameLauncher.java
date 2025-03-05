@@ -1,6 +1,6 @@
 package com.jman.gamelauncher;
 
-import com.jman.gamelauncher.initialization.GameLauncherInitializer;
+import com.jman.gamelauncher.controller.LauncherController;
 
 /**
  * The main starting point for the project.
@@ -19,6 +19,6 @@ public final class GameLauncher {
      * @param args command-line arguments (not used).
      */
     public static void main(final String... args) {
-        GameLauncherInitializer.INSTANCE.runLauncher();
+        new LauncherController().initialize();
     }
 }

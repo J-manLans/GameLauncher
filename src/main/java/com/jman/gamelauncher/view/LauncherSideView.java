@@ -2,7 +2,6 @@ package com.jman.gamelauncher.view;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.util.function.Consumer;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -10,7 +9,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 
@@ -54,6 +52,7 @@ public class LauncherSideView implements IView {
             labelStyling(gameLabel, AppConfig.TEXT_SIZE_NORMAL);
             scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
             scrollPane.setBorder(BorderFactory.createEmptyBorder());
+            scrollPane.getVerticalScrollBar().setUnitIncrement(8);
             gamesListPanel.setLayout(new BoxLayout(gamesListPanel, BoxLayout.Y_AXIS));
             gamesListPanel.setBackground(AppConfig.COLOR_DARK_GREY);
             buttonStyler(exitBtn, AppConfig.COLOR_WHITE);
@@ -115,14 +114,6 @@ public class LauncherSideView implements IView {
     ========================================*/
 
     /**
-     * Sets a listener for the scroll pane to control its speed.
-     * @param scrollListener a callback that adjusts the scroll speed
-     */
-    public void addScrollSpeedListener(final Consumer<Integer> scrollListener) {
-        scrollPane.addMouseWheelListener((e) -> scrollListener.accept(e.getWheelRotation()));
-    }
-
-    /**
      * Sets a listener for the exitBtn to quit the game when clicked.
      * @param exitLauncher a callback that will exit the launcher when the exitBtn is clicked
      */
@@ -145,29 +136,8 @@ public class LauncherSideView implements IView {
     }
 
     /*========================================
-    * Setters
-    ========================================*/
-
-    /**
-     * Sets the vertical scroll position of the scroll pane.
-     * @param position The new scroll position to set.
-     */
-    public void setScrollPosition(final int position) {
-        final JScrollBar vertical = scrollPane.getVerticalScrollBar();
-        vertical.setValue(position);
-    }
-
-    /*========================================
     * Getters
     ========================================*/
-
-    /**
-     * Gets the current vertical scroll position of the scroll pane.
-     * @return The current scroll position.
-     */
-    public int getScrollPosition() {
-        return scrollPane.getVerticalScrollBar().getValue();
-    }
 
     @Override
     public JPanel getMainPanel() {

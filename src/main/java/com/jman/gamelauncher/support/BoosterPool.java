@@ -97,7 +97,6 @@ public enum BoosterPool {
             if (isPaused) { return; } // If we are in pause mode, do nothing.
         }
 
-
         synchronized (boosterLock) {
             // Recheck pause after sleeping and possible wait time at the lock and check if the pool is empty
             if (isPaused || boosterPool.isEmpty()) { return; }

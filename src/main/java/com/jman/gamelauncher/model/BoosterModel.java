@@ -148,6 +148,10 @@ public abstract class BoosterModel extends Thread {
                         wait(); // Wait until activated or shutdown
                         if (running) {
                             System.out.println("cool down");
+                            // TODO: since this is in a synced block and the thread goes to sleep
+                            // it makes it impossible for another thread to enter the synced methods
+                            // above to notify it to pause or shut down: I think thats why the game loop
+                            // bug arises when closing the game.
                             spawnCoolDown();
                             System.out.println("active");
                         }
