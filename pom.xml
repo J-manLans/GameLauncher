@@ -24,18 +24,15 @@
   <!-- Build configuration -->
   <build>
     <plugins>
-      <!-- Surefire plugin for running tests -->
-      <plugin>
+      <plugin><!-- Surefire plugin for running tests -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.2</version>
         <configuration>
           <reportsDirectory>${project.build.directory}/custom-reports</reportsDirectory>
         </configuration>
-        <!-- Default configuration runs tests during the test phase -->
       </plugin>
-      <!-- Compiler plugin for compiling the project -->
-      <plugin>
+      <plugin><!-- Compiler plugin for compiling the project -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.14.0</version>
@@ -43,8 +40,7 @@
           <release>21</release>
         </configuration>
       </plugin>
-      <!-- Shade plugin to build a fat (shaded) JAR including dependencies -->
-      <plugin>
+      <plugin><!-- Shade plugin to build a fat (shaded) JAR including dependencies -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.6.0</version>
@@ -77,6 +73,15 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin><!-- Checkstyle plugin for checking code style -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.6.0</version>
+          <configuration>
+              <configLocation>_RepoResources/checkstyle.xml</configLocation>
+              <consoleOutput>true</consoleOutput>
+          </configuration>
       </plugin>
     </plugins>
   </build>
