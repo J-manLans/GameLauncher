@@ -109,7 +109,7 @@ public class LauncherController {
             }
         );
 
-        startView.addBackBtnListener(mainView::ShowStartView);
+        mainView.addBackBtnListener(mainView::ShowStartView);
     }
 
     /**
@@ -184,7 +184,7 @@ public class LauncherController {
      */
     private void closeGame() {
         // Re-adds back button listener for returning to the launcher and resets the color
-        mainView.setColorOnBackBtn();
+        mainView.setColorOnBackBtn(AppConfig.COLOR_ACCENT);
         mainView.addBackBtnListener(mainView::ShowStartView);
         // And displays the startView
         mainView.ShowStartView();

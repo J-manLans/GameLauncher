@@ -45,7 +45,6 @@ public class LauncherAboutView implements IView {
             labelStyling(instructionsSmiley, AppConfig.TEXT_HEADING_2);
 
             // Adds and place the components on the grid.
-            gbc = resetGbc(gbc.gridy, gbc.gridx);
             gbc.gridx = 0;
             gbc.gridy = 0;
             gbc.insets = AppConfig.INSET_BOTTOM_20;
