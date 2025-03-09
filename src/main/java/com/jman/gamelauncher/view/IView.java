@@ -95,7 +95,7 @@ interface IView {
     /**
      * Styles a button with specific color and border for uniformity.
      *
-     * @param btn the JLabel to style
+     * @param btn the JButton to style
      * @param borderAndHoverBackgroundClr the color used for the label's foreground and background
      */
     default void buttonStyler(final JButton btn, final Color borderAndHoverBackgroundClr) {
